@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0EA5E9;
+}
+
+/* Light Theme overrides for complete accessibility and contrast */
+.light {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+.light header {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+.light header span, .light header button {
+  color: #0F172A !important;
+}
+
+.light header button:hover {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+.light #home {
+  background-color: #F8FAFC !important;
+}
+
+.light #home h1 {
+  color: #0F172A !important;
+}
+
+.light #home p, .light #about p, .light #services p, .light #portfolio p, .light #why-choose p, .light #process p, .light #pricing p, .light #testimonials p, .light #faq p, .light #contact p {
+  color: #334155 !important;
+}
+
+.light #about {
+  background-color: #FFFFFF !important;
+}
+
+.light #about h2, .light #about h3, .light #about h4 {
+  color: #0F172A !important;
+}
+
+.light #about .p-6, .light #about .p-8 {
+  background-color: #F1F5F9 !important;
+  border-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+.light #services {
+  background-color: #F8FAFC !important;
+}
+
+.light #services h2, .light #services h3 {
+  color: #0F172A !important;
+}
+
+.light #services .group {
+  background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light #services .group:hover {
+  border-color: #0EA5E9 !important;
+}
+
+.light #portfolio {
+  background-color: #FFFFFF !important;
+}
+
+.light #portfolio h2, .light #portfolio h3 {
+  color: #0F172A !important;
+}
+
+.light #portfolio .group {
+  background-color: #F8FAFC !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light #industries {
+  background-color: #F8FAFC !important;
+}
+
+.light #industries h2, .light #industries h3 {
+  color: #0F172A !important;
+}
+
+.light #industries .group {
+  background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light #why-choose {
+  background-color: #FFFFFF !important;
+}
+
+.light #why-choose h2, .light #why-choose h3 {
+  color: #0F172A !important;
+}
+
+.light #why-choose .group {
+  background-color: #F8FAFC !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light #process {
+  background-color: #F8FAFC !important;
+}
+
+.light #process h2, .light #process h3 {
+  color: #0F172A !important;
+}
+
+.light #process button {
+  background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light #process button.bg-slate-800\/80 {
+  background-color: #E2E8F0 !important;
+  border-color: #0EA5E9 !important;
+  color: #0F172A !important;
+}
+
+.light #process .lg\:col-span-7 .p-8 {
+  background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  color: #0F172A !important;
+}
+
+.light #process .lg\:col-span-7 h3 {
+  color: #0F172A !important;
+}
+
+.light #process .lg\:col-span-7 .bg-slate-950\/40 {
+  background-color: #F1F5F9 !important;
+  border-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+.light #pricing {
+  background-color: #FFFFFF !important;
+}
+
+.light #pricing h2, .light #pricing h3 {
+  color: #0F172A !important;
+}
+
+.light #pricing .bg-slate-800\/30 {
+  background-color: #F8FAFC !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light #pricing .bg-slate-900 {
+  background-color: #FFFFFF !important;
+  border-color: #0EA5E9 !important;
+}
+
+.light #pricing h3, .light #pricing .text-white {
+  color: #0F172A !important;
+}
+
+.light #pricing .text-slate-300 {
+  color: #334155 !important;
+}
+
+.light #testimonials {
+  background-color: #F8FAFC !important;
+}
+
+.light #testimonials h2, .light #testimonials h4 {
+  color: #0F172A !important;
+}
+
+.light #testimonials .max-w-3xl {
+  background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  color: #0F172A !important;
+}
+
+.light #testimonials p {
+  color: #334155 !important;
+}
+
+.light #faq {
+  background-color: #FFFFFF !important;
+}
+
+.light #faq h2, .light #faq span {
+  color: #0F172A !important;
+}
+
+.light #faq .rounded-2xl {
+  background-color: #F8FAFC !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light #faq .rounded-2xl button span {
+  color: #0F172A !important;
+}
+
+.light #contact {
+  background-color: #F8FAFC !important;
+}
+
+.light #contact h2, .light #contact h3, .light #contact h4 {
+  color: #0F172A !important;
+}
+
+.light #contact .p-8 {
+  background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light #contact input, .light #contact select, .light #contact textarea {
+  background-color: #F1F5F9 !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  color: #0F172A !important;
+}
+
+.light #contact .bg-slate-900\/40 {
+  background-color: #FFFFFF !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+.light #contact .bg-slate-900\/40 p {
+  color: #0F172A !important;
+}
+
+.light #contact .bg-slate-950\/40 {
+  background-color: #F1F5F9 !important;
+  border-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+.light #main-footer {
+  background-color: #0F172A !important;
+  color: #94A3B8 !important;
+}
+
+.light #main-footer span, .light #main-footer h4 {
+  color: #FFFFFF !important;
+}

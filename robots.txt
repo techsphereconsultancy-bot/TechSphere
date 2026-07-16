@@ -1,0 +1,5 @@
+# Robots.txt for TechSphere IT & ERP Consultancy
+User-agent: *
+Allow: /
+
+Sitemap: https://techsphere.com/sitemap.xml
