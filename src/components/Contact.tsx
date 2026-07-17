@@ -87,13 +87,36 @@ export default function Contact({ selectedPlan = "" }: ContactProps) {
   setLoadingForm(false);
 };
 
-  const handleBookMeeting = () => {
-    if (!selectedDate || !selectedSlot) {
-      alert("Please select a convenient date and hourly slot.");
-      return;
+const handleBookMeeting = async () => {
+  try {
+    const response = await fetch(
+      "https://formspree.io/f/xaqrejgl",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          booking: true,
+          name: bookingName,
+          email: bookingEmail,
+          phone: bookingPhone,
+          date: selectedDate,
+          time: selectedTime,
+        }),
+      }
+    );
+
+    if (response.ok) {
+      alert("✅ Thank you! Your consultation request has been sent. We'll confirm your appointment shortly by email or phone.")
+    } else {
+      alert("Failed to send booking.");
     }
-    setBookingConfirmed(true);
-  };
+  } catch (err) {
+    alert("Network Error");
+  }
+};
 
   return (
     <section id="contact" className="py-24 bg-[#0F172A] relative overflow-hidden">
