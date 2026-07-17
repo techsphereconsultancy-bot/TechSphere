@@ -43,19 +43,49 @@ export default function Contact({ selectedPlan = "" }: ContactProps) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.phone) {
-      alert("Please fill in the required fields (Name, Email, Phone).");
-      return;
-    }
-    setLoadingForm(true);
-    // Simulate API Proxy delays
-    setTimeout(() => {
-      setLoadingForm(false);
+ const handleFormSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.phone) {
+    alert("Please fill in the required fields.");
+    return;
+  }
+
+  setLoadingForm(true);
+
+  try {
+    const response = await fetch(
+      "https://formspree.io/f/xaqrejgl",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    if (response.ok) {
       setFormSubmitted(true);
-    }, 1200);
-  };
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "Website Design",
+        message: "",
+      });
+    } else {
+      alert("Failed to send inquiry.");
+    }
+  } catch (error) {
+    alert("Network Error");
+  }
+
+  setLoadingForm(false);
+};
 
   const handleBookMeeting = () => {
     if (!selectedDate || !selectedSlot) {
